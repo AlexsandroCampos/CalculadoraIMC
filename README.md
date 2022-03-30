@@ -6,7 +6,7 @@ Aplicação console para o cálculo do IMC.
 
 - Calcula e apresenta o IMC
 
-## Tecnologias Utilizadas
+## Tecnologias utilizadas
 
 - dotnet 6
 
