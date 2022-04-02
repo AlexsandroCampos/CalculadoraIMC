@@ -21,12 +21,16 @@ namespace CalculadoraIMC
 
             Console.WriteLine("Seu IMC é {0}", imc);
 
+            double pesoNormalMinimo = altura * altura * 18.5;
+            double pesoNormalMaximo = altura * altura * 25;
+            double pesoFaltante = pesoNormalMinimo - peso;
+            double pesoExcesso = peso - pesoNormalMaximo;
             if(imc < 17 ){
-                Console.WriteLine("Está muito abaixo do peso.");
+                Console.WriteLine("Está muito abaixo do peso. Deveria receber mais {0} Kg", pesoFaltante);
             }
 
             else if(imc >= 17 && imc < 18.5 ){
-                Console.WriteLine("Está abaixo do peso.");
+                Console.WriteLine("Está abaixo do peso. Deveria receber mais {0} Kg", pesoFaltante);
             }
 
             else if(imc >= 18.5 && imc < 25){
@@ -34,19 +38,19 @@ namespace CalculadoraIMC
             }
 
             else if(imc >= 25 && imc < 30){
-                 Console.WriteLine("Está acima do peso.");
+                 Console.WriteLine("Está acima do peso. Deveria perder {0} Kg", pesoExcesso);
             }
 
             else if(imc >= 30 && imc < 35){
-                 Console.WriteLine("Está com obsidade I.");
+                 Console.WriteLine("Está com obsidade I. Deveria perder {0} Kg", pesoExcesso);
             }
 
             else if(imc >= 35 && imc < 40){
-                 Console.WriteLine("Está com obsidade II.");
+                 Console.WriteLine("Está com obsidade II. Deveria perder {0} Kg", pesoExcesso);
             }
 
             else {
-                 Console.WriteLine("Está com obsidade III.");
+                 Console.WriteLine("Está com obsidade III. Deveria perder {0} Kg", pesoExcesso);
             }
         }
     }
